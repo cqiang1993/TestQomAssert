@@ -1,0 +1,27 @@
+{
+  "name": "TestQomAssert",
+  "description": "测试素质测评的",
+  "main": "",
+  "authors": [
+    "cqiang1993 <cqiang1993@163.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Test",
+    "Qom",
+    "Assert"
+  ],
+  "homepage": "https://github.com/cqiang1993/TestQomAssert",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.1",
+    "bootstrap": "^3.3.7"
+  }
+}
