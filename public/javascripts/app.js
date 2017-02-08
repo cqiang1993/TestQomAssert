@@ -1,0 +1,30 @@
+angular.module('classApp',['ui.router'])
+    .config(function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise("/");
+        $stateProvider.state('/',{
+            url:'/',
+            views:{
+                '':{
+                    templateUrl:'pages/home.html'
+                }
+            }
+        }).state('/login',{
+            url:'/login',
+            views:{
+                '':{
+                    templateUrl:'/views/pages/login.jade',
+                    controller:'LoginCtrl'
+                }
+            }
+        })
+    }).run(function($rootScope,$location,$http){
+        $http({
+            url:'/users/validate',
+            method:'GET'
+        }).success(function(user){
+            $rootScope.me = user;
+            $location.path('/');
+        }).error(function(data){
+            $location.path('/login');
+        });
+    });

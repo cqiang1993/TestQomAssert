@@ -3,7 +3,7 @@ extends ../layout
 block content
 	.col-md-12
 	.panel.panel-default
-		.panel-heading 登录
+		.panel-heading
 		form.form-horizontal(role='form', name='userform', ng-submit='login()')
 			.panel-body
 				.form-group.row(ng-class="{'has-error':userform.username.$dirty&&userform.username.$invalid}")
