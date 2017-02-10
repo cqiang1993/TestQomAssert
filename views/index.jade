@@ -1,45 +1,5 @@
-doctype html
-html(ng-app='classApp')
-	head
-		meta(charset='UTF-8')
-		title 素质测评校验平台
-		link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.css')
-	body(style='margin-top:70px')
-		nav.navbar.navbar-default.navbar-fixed-top(role='navigation', ng-controller='NavBarCtrl')
-			.navbar-header
-				a.navbar-brand(ui-sref='/') 素质测评校验平台
-			ul.nav.navbar-nav
-				li(ng-hide='me', ng-class="{active:isActive('/login')}")
-					a(ui-sref='/login') 登录
-				//li(ng-show='me', ng-class="{active:isActive('/student')}")
-				//	a(ui-sref='/student') 学生管理
-				//li(ng-show='me', ng-class="{active:isActive('/exercise')}")
-				//	a(ui-sref='/exercise') 习题管理
-				//li(ng-show='me', ng-class="{active:isActive('/detail')}")
-				//	a(ui-sref='/detail') 详情
-			ul.nav.navbar-nav.navbar-right(ng-show='me')
-				li.dropdown
-					a.dropdown-toggle(data-toggle='dropdown', role='button')
-						| 欢迎{{me.username}}
-						span.caret
-					ul.dropdown-menu.dropdown-menu-left
-						li
-							a(ng-click='logout()') 退出
-						//li
-						//	a(ui-sref='/change') 修改密码
-		.contariner
-			.row(ui-view='')
-	script(src='/libs/jquery/dist/jquery.js')
-	script(src='/libs/bootstrap/dist/js/bootstrap.js')
-	script(src='/libs/angular/angular.js')
-	script(src='/libs/angular-route/angular-route.js')
-	script(src='/libs/angular-ui-router/release/angular-ui-router.js')
-	script(src='/javascripts/app.js')
-	script(src='/javascripts/service/dataService.js')
-	script(src='/javascripts/controller/RegCtrl.js')
-	script(src='/javascripts/controller/LoginCtrl.js')
-	script(src='/javascripts/controller/NavBarCtrl.js')
-	script(src='/javascripts/controller/StuCtrl.js')
-	script(src='/javascripts/controller/ExerCtrl.js')
-	script(src='/javascripts/controller/DetailCtrl.js')
-	script(src='/javascripts/controller/ChangeCtrl.js')
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
